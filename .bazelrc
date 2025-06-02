@@ -14,9 +14,12 @@
 
 # This macro is needed in order for mlmd to build with ZetaSQL which can only
 # be compiled upon c++17 or higher.
+# Removed ZetaSQL but kept -std=c++17 as candidate for future removal
 build --cxxopt="-std=c++17"
 
 # Needed to avoid zetasql proto error.
+# zetasql is already removed.
+# option candidate for removal
 build --protocopt=--experimental_allow_proto3_optional
 
 # icu@: In create_linking_context: in call to create_linking_context(),

@@ -51,6 +51,7 @@ ADD . /mlmd-src
 WORKDIR /mlmd-src
 
 # "-std=c++17" is needed in order to build with ZetaSQL.
+# Removed ZetaSQL but kept "-std=c++17" as candidate for future removal
 RUN bazel build -c opt --action_env=PATH \
   --define=grpc_no_ares=true \
   //ml_metadata/metadata_store:metadata_store_server --cxxopt="-std=c++17"
